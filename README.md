@@ -160,7 +160,7 @@ message: {
 - All the logic inside "src" folder
 - App.js ->(Main file) 
 
-## Backend Logic
+## Frontend Logic
 
 ### Regiter.jsx
 - I have used style components for styling .          
