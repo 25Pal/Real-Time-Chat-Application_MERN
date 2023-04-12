@@ -15,6 +15,7 @@ import { Buffer } from "buffer";
 function SetAvatar() {
 
     const api = "https://api.dicebear.com/6.x/adventurer/svg?seed="
+    // https://api.dicebear.com/6.x/adventurer/svg?seed=Ginger&flip=true
 
     const navigate = useNavigate();
 
@@ -75,6 +76,7 @@ function SetAvatar() {
 
         }
     }
+    
 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Fetching avatar from api ^^^^^^^^^^^^^^^^^^^^^^^^\\
 
@@ -90,7 +92,7 @@ function SetAvatar() {
             for (let i = 0; i < 6; i++) {
                 let number = Math.round(Math.random() * 10000);
                 
-                const image = await axios.get(`${api}${name + number}`);
+                const image = await axios.get(`${api}${name + number}&flip=true`);
 
                 const buffer = new Buffer(image.data);
                 Data.push(buffer.toString("base64"));  //****** Converting Buffer data to base64 string(SVG format) ******\\
@@ -98,7 +100,8 @@ function SetAvatar() {
             setAvatars(Data);
             setIsLoading(false);
         }
-
+// "https://api.dicebear.com/6.x/adventurer/svg?seed=
+    // https://api.dicebear.com/6.x/adventurer/svg?seed=Ginger&flip=true
 
 
         fetchData();
