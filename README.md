@@ -163,7 +163,7 @@ message: {
 ## Backend Logic
 
 ### Regiter.jsx
-- I have used style coponents for styling .          
+- I have used style components for styling .          
       <Section>
             Registration logic
       <Section/>
@@ -176,14 +176,14 @@ message: {
 ![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/register.png?raw=true)
 
 ### Login.jsx
-- I have used style coponents for styling .  
+- I have used style components for styling .  
       <Section>  login Logic <Section/>
 - It has same property as registration page .
 
 ![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/login.png?raw=true)
 
 ### Chat.jsx
-- I have used style coponents for styling .  
+- I have used style components for styling .  
       <Container> Chat Logic <Container/>
 - Once user login /Register ,He will automatically  redirected to the chat page .
 - From chat page they will automatically redirected to our "/avatar" page .
