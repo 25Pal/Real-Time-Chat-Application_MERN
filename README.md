@@ -173,14 +173,14 @@ message: {
 
 
 
-![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/registration%20page.png?raw=true)
+![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/register.png?raw=true)
 
 ### Login.jsx
 - I have used style coponents for styling .  
       <Section>  login Logic <Section/>
 - It has same property as registration page .
 
-![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/Login.png?raw=true)
+![App Screenshot](https://github.com/25Pal/Real-Time-Chat-Application_MERN/blob/main/Client/chat_application/src/ScreenShots/login.png?raw=true)
 
 ### Chat.jsx
 - I have used style coponents for styling .  
