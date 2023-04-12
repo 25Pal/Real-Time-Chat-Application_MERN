@@ -31,15 +31,19 @@ function Contacts({ contacts, currentUser, changeChat }) {
 
                 currentUserImage && currentUserName && (
                     <Container>
-                        
                         <div className='brand'>
                             <img src={logo} alt="logo" />
                             <h3>Quick Chat</h3>
                         </div>
+                        {/* <div className='searchbar'>
+
+                        </div> */}
+                        
                         <div className='contacts'>
                             {
                                 contacts.map((contacts, index) => {
                                     return (
+                                        
                                         <div className={`contact ${index === currentSelected ? "selected" : ""} `}
 
                                             key={index} onClick={() => changeCurrentChat(index, contacts)} >
@@ -86,9 +90,15 @@ const Container = styled.div`
     
     box-sizing: border-box;
     display:grid;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 10% 76% 14%;
     overflow: hidden;
     background-color:#080420;
+    .searchbar{
+        border:red 1px solid;
+        width: 100%;
+        height: 3rem;
+        
+    }
     .brand{
         display:flex;
         align-items:center;
