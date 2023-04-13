@@ -1,9 +1,9 @@
-import axios from 'axios'
-import React, { useEffect } from 'react'
+
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { BiPowerOff } from "react-icons/bi";
-// import { useEffect } from 'react'
+
 
 function LogOut() {
     // {console.log("btn")}

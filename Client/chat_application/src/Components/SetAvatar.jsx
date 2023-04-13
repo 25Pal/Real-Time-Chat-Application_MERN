@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import loader from "../assets/loader.gif"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
-import axios, { AxiosError } from "axios"
+import axios from "axios"
 import { setAvatarRoute } from '../utils/APIRoutes';
 import { Buffer } from "buffer";
 
