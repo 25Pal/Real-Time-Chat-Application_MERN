@@ -1,5 +1,5 @@
 export const host="https://backendpart-phwo.onrender.com";
-// export const host="https://quickchat-backend.glitch.me/";
+
 
 export const registerRoute = `${host}/api/auth/register`
 
@@ -13,4 +13,3 @@ export const sendMessaegRoute= `${host}/api/messages/addmsg`;
 
 export const getAllMessagesRoute= `${host}/api/messages/getmsg`;
 
-// https://quickchatbackendpallavi.onrender.com

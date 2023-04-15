@@ -28,17 +28,14 @@ function Contacts({ contacts, currentUser, changeChat }) {
     return (
         <>
             {
-
+                    
                 currentUserImage && currentUserName && (
                     <Container>
                         <div className='brand'>
                             <img src={logo} alt="logo" />
                             <h3>Quick Chat</h3>
                         </div>
-                        {/* <div className='searchbar'>
-
-                        </div> */}
-                        
+                      
                         <div className='contacts'>
                             {
                                 contacts.map((contacts, index) => {

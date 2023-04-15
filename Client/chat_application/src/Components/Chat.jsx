@@ -10,7 +10,9 @@ import { io } from "socket.io-client";
 import { host } from "../utils/APIRoutes"
 
 function Chat() {
+
   const socket = useRef();
+
   const [contacts, setContacts] = useState([]);
   const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
@@ -18,9 +20,10 @@ function Chat() {
 
   const navigate = useNavigate();
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If user not Login then will redirect to login ^^^^^^^^^^^^^^^^^^^^^^\\
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If user not Login then will redirect to login ^^^^^^^^^^^^^^^^^^^^^^\\
 
   useEffect(() => {
+   
     const setUser = async function () {
       if (!localStorage.getItem("chat-app-user")) {
         navigate("/login");
@@ -32,18 +35,20 @@ function Chat() {
     setUser();
   }, []);
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Adding data to Socket.io ^^^^^^^^^^^^^^^^^^^^^^\\
- 
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Adding data to Socket.io ^^^^^^^^^^^^^^^^^^^^^^\\
+
   useEffect(() => {
+
     if (currentUser) {
       socket.current = io(host);
-      socket.current.emit("add-user", currentUser._id);
+      socket.current.emit("add-user", currentUser._id); //++++++ Created custom event ++++++\\
     }
   }, [currentUser]);
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Getting list of users from backend  ^^^^^^^^^^^^^^^^^^^^^^\\
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Getting list of users from backend  ^^^^^^^^^^^^^^^^^^^^^^\\
 
   useEffect(() => {
+   
     const getContact = async function () {
       if (currentUser) {
         if (currentUser.isAvatarImageSet) {
@@ -58,19 +63,23 @@ function Chat() {
     getContact();
   }, [currentUser]);
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Setting state value of current-chat  ^^^^^^^^^^^^^^^^^^^^^^\\
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Setting state value of current-chat  ^^^^^^^^^^^^^^^^^^^^^^\\
 
   const handleChatChange = (chat) => {
+    console.log(chat)
     setCurrentChat(chat);
   }
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Main part ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
+  //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Main part ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
 
   return (
     <Container>
+      
       <div className="container">
         <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} />
+       
         {
+
           isLoaded &&
             currentChat === undefined ?
             (<Welcome currentUser={currentUser} />) :
