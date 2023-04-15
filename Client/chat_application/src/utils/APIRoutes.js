@@ -1,4 +1,4 @@
-export const host="https://backendpart-phwo.onrender.com";
+export const host="https://sercerside.onrender.com";
 
 
 export const registerRoute = `${host}/api/auth/register`
