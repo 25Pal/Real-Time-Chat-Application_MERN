@@ -76,7 +76,11 @@ function SetAvatar() {
         }
     }
     
+    const refresh = () =>{
 
+        navigate('/')
+
+    }
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Fetching avatar from api ^^^^^^^^^^^^^^^^^^^^^^^^\\
 
     useEffect(() => {
@@ -137,8 +141,12 @@ function SetAvatar() {
 
 
                         </div>
+                        <div className='btns'>
+                        <button className='refresh' onClick={refresh}>Get different Avatars</button>
+                        
                         <button className='submit-btn' onClick={setProfilePicture}>Set as Profile Picture</button>
-
+                        
+                        </div>
                     </Container>
                 )
             }
@@ -200,10 +208,35 @@ const Container = styled.div`
         transition: 0.5s ease-in-out;
 
         &:hover{
-            background-color: #4e0eff;
+            background-color:blueviolet;
         }
         
 
+      }
+      .refresh{
+        background-color :transparent;
+        color: white;
+        padding : 1rem 2rem ;
+        border:none;
+        font-weight :bold;
+        cursor:pointer;
+        border-radius:0.4rem;
+        font-size:1rem;
+        text-transform:uppercase;
+        transition: 0.5s ease-in-out;
+
+        &:hover{
+           
+            color: blueviolet;
+        }
+
+      }
+      .btns{
+        gap:3rem;
+        display: flex;
+        justify-content: center;
+        align-items:flex-end ;
+        width: 100%;
       }
 @media screen and (min-width :720px) and (max-width:1080px){
     .avatars{
@@ -226,7 +259,7 @@ const Container = styled.div`
             }
         }
         .selected{
-            border:0.4rem solid #4e0eff
+            border:0.4rem solid blueviolet
         }
         
     }
@@ -262,7 +295,7 @@ const Container = styled.div`
             }
         }
         .selected{
-            border:0.2rem solid #4e0eff
+            border:0.2rem solid blueviolet
         }
         
     }
@@ -273,6 +306,7 @@ const Container = styled.div`
    
     .title-container{
         h1{
+            font-size: 2rem;
             padding-left: 50px;
             color:white;
         }
@@ -280,16 +314,9 @@ const Container = styled.div`
     .avatars{
         display:flex;
         gap:0rem;
-
         .avatar{
             border:0.1rem solid transparent;
             padding:0rem;
-            border-radius: none;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.5s ease-in-out;
-
             img{
                 padding:0px;
                 width:100%;
@@ -298,12 +325,17 @@ const Container = styled.div`
         }
         .selected{
           
-            border:0.2rem solid #4e0eff
+            border:0.2rem solid blueviolet;
             
         }
         
     }
+      .btns{
+        gap:1rem;
+        width: 50%;
+      }
 }
+
 
 `
 export default SetAvatar;

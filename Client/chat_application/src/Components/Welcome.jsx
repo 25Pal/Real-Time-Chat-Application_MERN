@@ -22,13 +22,54 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     color:white;
+    padding: 0.3rem;
     img{
-        height :20rem;
+     
+        height :30rem;
     }
     span{
         color:turquoise;
     }
+    h1{
+            font-size:3rem;
+    }
     
+    @media screen and (min-width :100px) and (max-width:379px)  {
+         img{
+            height :13rem;
+         }
+         h1{
+            font-size:2rem;
+         }
+         span{
+            display: flex;
+            align-items: center;
+            color:turquoise;
+            
+        }
+        h3{
+            padding-top: 1rem;
+        }
+        
+       }
+
+       @media screen and (min-width :379px)  and  (max-width:720px)  {
+         img{
+            height :17rem;
+         }
+         h1{
+            font-size:3rem;
+         }
+         span{
+            display: flex;
+            align-items: center;
+            color:#ffffff;
+            
+        }
+        h3{
+            padding-top: 1rem;
+        }
+       }
     
 `
 export default Welcome;

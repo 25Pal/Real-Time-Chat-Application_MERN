@@ -154,7 +154,6 @@ const Container = styled.div`
                 }
             }
         }
-
         .selected {
             background-color : #9186f3;
         }
@@ -254,9 +253,11 @@ const Container = styled.div`
 
     grid-template-rows: 10% 80% 10%;
         .current-user{
-            padding: 0rem;
-            gap:0.3rem;
+          
+            padding: 1rem;
+            gap:0.1rem;
             .avatar{
+            
                 width: 100%;
                 height: auto;
             }
@@ -265,26 +266,35 @@ const Container = styled.div`
                  font-size:0.9rem ;
                }
           }
+         
         }
         .contacts{
+           
             &::-webkit-scrollbar{
             height:0.2rem;
             }
             .contact{
+                border: 0.5px solid #2f1d90;
+                /* border-radius:1px; */
+                box-shadow:1px 1px 3px blueviolet;
             background-color: transparent;
-            padding: 0.5rem;
+            padding: 0rem;
             gap:0.5rem;
             min-height:auto;
             width:100%;
             box-sizing: border-box;
+           
+            /* border-radius: 9px solid red; */
             .avatar{
                 img{
-                    height: 2rem;
+                   
+                    height: 3.5rem;
                 }
             }
            .username{
                h3{
-                   font-size:0.9rem ;
+                font-family:Arial, Helvetica, sans-serif;
+                   font-size:1rem ;
                 }
             }
 

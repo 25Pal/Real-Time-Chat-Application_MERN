@@ -243,13 +243,13 @@ const Container = styled.div`
                 gap:0.3rem;
                 .avtar {
                     img{
-                        height:2.9rem;
+                        height:4rem;
                     }
                 }
         }
         .username{
             h3{
-                font-size: 0.8rem;
+                font-size: 1.2rem;
                 color: white;
             }
         }

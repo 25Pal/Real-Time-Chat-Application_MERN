@@ -95,6 +95,7 @@ function Chat() {
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ CSS Part  ^^^^^^^^^^^^^^^^^^^^^^\\
 
 const Container = styled.div`
+/* border:1px solid red; */
 
        height :100vh;
       width :100wh;
@@ -116,17 +117,26 @@ const Container = styled.div`
 
       
         @media screen and (min-width :720px) and (max-width:1080px){    //^^^ Making it responsive for tablate mode ^^^\\
+          
           grid-template-columns: 35% 65%;
         }
 
         @media screen and (min-width :379px)  and  (max-width:720px) {  //^^^ For phone will make it responsive as below ^^^\\
-          grid-template-columns: 30% 70% ;   
+          grid-template-columns: 30% 70% ; 
+          height :97vh;
+          width:100vw;  
         } 
 
         @media screen and (min-width :100px) and (max-width:379px)  {
+         
           grid-template-columns: 40% 60% ;
+          height :100vh;
+          width:100vw;
+          border: 0.5px solid blueviolet;
           
         }  
       }
+
+       
 `
 export default Chat
