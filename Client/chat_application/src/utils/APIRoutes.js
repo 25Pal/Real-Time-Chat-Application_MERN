@@ -1,4 +1,4 @@
-export const host="https://quick-chat-yr1v.onrender.com";
+export const host="https://chat-app-6jjg.onrender.com";
 
 // export const host="http://localhost:5000";
 

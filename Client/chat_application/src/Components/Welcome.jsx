@@ -40,7 +40,6 @@ const Container = styled.div`
          span{
             display: flex;
             align-items: center;
-            color:turquoise;
             
         }
         h3{
@@ -59,7 +58,6 @@ const Container = styled.div`
          span{
             display: flex;
             align-items: center;
-            color:#ffffff;
             
         }
         h3{
