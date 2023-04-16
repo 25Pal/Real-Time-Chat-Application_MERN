@@ -1,4 +1,4 @@
-export const host="https://newdeployment-quickchat-app.onrender.com";
+export const host="https://final-app-deployment.onrender.com";
 
 // export const host="http://localhost:5000";
 

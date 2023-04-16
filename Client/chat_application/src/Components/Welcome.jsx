@@ -23,15 +23,9 @@ const Container = styled.div`
     flex-direction: column;
     color:white;
     padding: 0.3rem;
-    img{
-     
-        height :30rem;
-    }
+    
     span{
         color:turquoise;
-    }
-    h1{
-            font-size:3rem;
     }
     
     @media screen and (min-width :100px) and (max-width:379px)  {
