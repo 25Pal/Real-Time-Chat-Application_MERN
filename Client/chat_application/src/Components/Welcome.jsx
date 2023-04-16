@@ -22,11 +22,13 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     color:white;
-    padding: 0.3rem;
-    
+    img{
+            height :20rem;
+    }
     span{
         color:turquoise;
     }
+    
     
     @media screen and (min-width :100px) and (max-width:379px)  {
          img{
