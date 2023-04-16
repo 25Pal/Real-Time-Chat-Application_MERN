@@ -43,18 +43,19 @@ global.onlineUsers = new Map();
 //-->Whenever our server is connected to socket io 
 
 io.on("connection", (socket) => {
-   
+
     global.chatSocket = socket;
 
     //-->Catching custom event "add-user"
     socket.on("add-user", (userId) => {
-    
+  
         onlineUsers.set(userId, socket.id);
+        
     });
-    
+   
     //-->Catching custom event "send-msg"
     socket.on("send-msg", (data) => {
-      
+     
         const sendUserSocket = onlineUsers.get(data.to);
         if (sendUserSocket) {
             socket.to(sendUserSocket).emit("msg-recieve", data.message);

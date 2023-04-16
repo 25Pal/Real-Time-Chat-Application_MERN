@@ -52,7 +52,7 @@ function Register() {
 
             if (data.status === true) {
                 localStorage.setItem('chat-app-user', JSON.stringify(data.createUser));
-                alert("Congratulatons..! User Created Succesfully.");
+                // alert("Congratulatons..! User Created Succesfully.");
                 navigate("/");
             }
         }

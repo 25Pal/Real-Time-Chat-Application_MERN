@@ -69,8 +69,7 @@ function SetAvatar() {
                 localStorage.setItem("chat-app-user", JSON.stringify(user));
                 navigate('/')
             } else {
-
-                alert("Click again to set Avatar !");
+                toast.error("Click again to set an Avatar...", toastOptions)
             }
 
 

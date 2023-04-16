@@ -62,6 +62,7 @@ function ChatContainer({ currentChat, currentUser, socket }) {
 
     }, [arrivalMessage]);
 
+    //Doubt
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behaviour: "smooth" });
     }, [messages]);
