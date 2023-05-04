@@ -29,6 +29,10 @@ const userSchema= new mongoose.Schema({
     avatarImage:{
         type:String,
         default:""
+    },
+    Online:{
+        type:Boolean,
+        default : false
     }
 
 },{timestamps:true})

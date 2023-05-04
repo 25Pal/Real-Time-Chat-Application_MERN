@@ -57,7 +57,7 @@ const register = async function (req, res) {
 const login = async function (req, res) {
     try {
         const data = req.body;
-
+        console.log(data)
         let checkUser = await userModel.findOne({ username: data.username });
 
         if (!checkUser) {
@@ -68,7 +68,7 @@ const login = async function (req, res) {
         if (!checkPassword) {
             return res.json({ status: false, msg: "Wrong Passsword !" })
         }
-
+console.log(checkUser)
         return res.json({ status: true, checkUser });
 
     } catch (err) {
@@ -92,7 +92,29 @@ const setAvatar = async function (req, res) {
         });
 
     } catch (err) {
-        return res.json({ status:false, msg: err.message })
+        return res.json({ status: false, msg: err.message })
+    }
+}
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Update Profile ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
+
+const updateAvatar = async function (req, res) {
+    try {
+        const userId = req.params.id;
+        // const avatarImage = req.body.image;
+        console.log(userId)
+        const updateImage = await userModel.findOneAndUpdate({ _id: userId }, {isAvatarImageSet:false , avatarImage:" "},{new:true});
+      
+        if (!updateImage) {
+            console.log("Not getting data")
+            return res.json({ status: false, msg: "Not getting data" })
+        }
+        console.log(updateImage.isAvatarImageSet)
+       return res.json({isSetAvatar : false })
+
+
+    } catch (err) {
+        return res.json({ status: false, msg: err.message })
     }
 }
 
@@ -103,7 +125,7 @@ const getAllUsers = async function (req, res) {
         let currentUserId = req.params.id;
 
         const users = await userModel.find({ _id: { $ne: currentUserId } }).select([
-            "email", "username", "avatarImage", "_id",
+            "email", "username", "avatarImage", "_id","Online"
         ]).sort({ updatedAt: -1 });
 
         return res.json(users);
@@ -115,4 +137,4 @@ const getAllUsers = async function (req, res) {
 
 
 
-module.exports = { register, login, setAvatar, getAllUsers }
+module.exports = { register, login, setAvatar, getAllUsers, updateAvatar }
