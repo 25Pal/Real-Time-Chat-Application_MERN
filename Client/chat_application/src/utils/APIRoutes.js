@@ -1,7 +1,8 @@
 // export const host="https://real-time-chat-app-cvb7.onrender.com";
+//https://updated-kyi0.onrender.com
+// export const host ="http://localhost:5000";
 
-// export const host="https://newapp-a2uc.onrender.com";
-export const host ="http://localhost:5000";
+export const host="https://updated-kyi0.onrender.com";
 
 export const registerRoute = `${host}/api/auth/register`
 
