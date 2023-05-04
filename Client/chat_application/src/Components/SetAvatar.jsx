@@ -72,12 +72,11 @@ function SetAvatar() {
                 toast.error("Click again to set an Avatar...", toastOptions)
             }
 
-
         }
     }
     
-    const refresh = () =>{
-
+    const refresh = async () =>{
+       
         navigate('/')
 
     }
@@ -96,15 +95,17 @@ function SetAvatar() {
                 let number = Math.round(Math.random() * 10000);
                 
                 const image = await axios.get(`${api}${name + number}&flip=true`);
-
+                // console.log(image)
                 const buffer = new Buffer(image.data);
+                // console.log(buffer)
                 Data.push(buffer.toString("base64"));  //****** Converting Buffer data to base64 string(SVG format) ******\\
+                // console.log(Data)
             }
             setAvatars(Data);
             setIsLoading(false);
         }
 // "https://api.dicebear.com/6.x/adventurer/svg?seed=
-    // https://api.dicebear.com/6.x/adventurer/svg?seed=Ginger&flip=true
+// https://api.dicebear.com/6.x/adventurer/svg?seed=Ginger&flip=true
 
 
         fetchData();
@@ -130,7 +131,7 @@ function SetAvatar() {
                                             key={index}
                                             className={`avatar ${selectedAvatar === index ? "selected" : ""}`}>
 
-                                            <img src={`data:image/svg+xml;base64,${avatar}`} alt="avatar"   //^^^^ Fixed url to use base64 decoded string as an src link ^^^\\
+                                            <img src={`data:image/svg+xml;base64,${avatar}`} alt="avatar"   //^^^^ Fixed url to use base64 decoded(svg string) string as an src link ^^^\\
                                                 onClick={() => setSelectedAvatar(index)}
                                             />
                                         </div>

@@ -40,7 +40,11 @@ function Chat() {
   useEffect(() => {
 
     if (currentUser) {
-      socket.current = io(host);
+      socket.current = io(host,{
+        auth:{
+          token : currentUser._id 
+        }
+      });
       socket.current.emit("add-user", currentUser._id); //++++++ Created custom event ++++++\\
     }
   }, [currentUser]);
@@ -66,7 +70,7 @@ function Chat() {
   //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Setting state value of current-chat  ^^^^^^^^^^^^^^^^^^^^^^\\
 
   const handleChatChange = (chat) => {
-    console.log(chat)
+   
     setCurrentChat(chat);
   }
 
@@ -139,4 +143,4 @@ const Container = styled.div`
 
        
 `
-export default Chat
+export default Chat ;

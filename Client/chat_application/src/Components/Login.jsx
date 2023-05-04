@@ -40,16 +40,19 @@ function Login() {
     event.preventDefault();
 
     if (handleValidation()) {
-     
+     console.log("inside valid")
       const { username, userpassword } = Ivalue;
       const { data } = await axios.post(loginRoute, { username, userpassword });
-     
+     console.log(data)
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
         
         localStorage.setItem('chat-app-user', JSON.stringify(data.checkUser));
+        const user = await JSON.parse(localStorage.getItem("chat-app-user")); 
+        user.Online= true;
+        localStorage.setItem('chat-app-user', JSON.stringify(user));
         // alert("Logged In Sucessfully !");
         navigate("/");
       }

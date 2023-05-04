@@ -51,7 +51,11 @@ function Register() {
             }
 
             if (data.status === true) {
+
                 localStorage.setItem('chat-app-user', JSON.stringify(data.createUser));
+                const user = await JSON.parse(localStorage.getItem("chat-app-user")); 
+                user.Online= true;
+                localStorage.setItem('chat-app-user', JSON.stringify(user));
                 // alert("Congratulatons..! User Created Succesfully.");
                 navigate("/");
             }

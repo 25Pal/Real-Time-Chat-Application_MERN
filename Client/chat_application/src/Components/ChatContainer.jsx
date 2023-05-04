@@ -4,13 +4,16 @@ import LogOut from '../Components/LogOut';
 import ChatInput from "../Components/ChatInput";
 import { v4 as uuidv4 } from "uuid";
 import axios from 'axios';
+
 import { getAllMessagesRoute, sendMessaegRoute } from '../utils/APIRoutes';
 
+import "react-toastify/dist/ReactToastify.css";
 
 function ChatContainer({ currentChat, currentUser, socket }) {
 
     const [messages, setMessages] = useState([]);
     const [arrivalMessage, setArrivalMessage] = useState(null);
+
     const scrollRef = useRef();
 
     useEffect(() => {
@@ -49,7 +52,9 @@ function ChatContainer({ currentChat, currentUser, socket }) {
         setMessages(msgs);
     };
 
+
     useEffect(() => {
+
         if (socket.current) {
             socket.current.on("msg-recieve", (msg) => {
                 setArrivalMessage({ fromSelf: false, message: msg })
@@ -58,11 +63,12 @@ function ChatContainer({ currentChat, currentUser, socket }) {
     }, []);
 
     useEffect(() => {
+
         arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
 
     }, [arrivalMessage]);
 
-    //Doubt
+
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behaviour: "smooth" });
     }, [messages]);
@@ -70,12 +76,11 @@ function ChatContainer({ currentChat, currentUser, socket }) {
     return (
         <>
             {
-
                 currentChat && (
                     < Container >
                         <div className="chat-header">
                             <div className="user-details">
-                                <div className="avtar">
+                                <div className="avtar" >
                                     <img
                                         src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
                                         alt="avatar"
@@ -136,6 +141,7 @@ const Container = styled.div`
             grid-template-rows: 15% 70% 15%;
             }
     .chat-header{
+
         background-color: #080428;
         display: flex;
         justify-content: space-between;
