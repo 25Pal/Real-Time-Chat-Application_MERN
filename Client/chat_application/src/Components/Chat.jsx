@@ -81,7 +81,6 @@ function Chat() {
       
       <div className="container">
         <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange} />
-       
         {
 
           isLoaded &&

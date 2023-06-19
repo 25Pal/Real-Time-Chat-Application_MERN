@@ -14,7 +14,7 @@ export default function App() {
         <Route path='/login' element={ <Login/>}/>
         <Route path='/' element={<Chat/>}/>
         <Route path='/avatar' element={<SetAvatar/>}/>
-        {/* <Route path ='/welcome' element={<Welcome/>}/> */}
+     
       </Routes>
    
       

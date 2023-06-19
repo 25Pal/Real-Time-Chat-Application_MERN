@@ -1,20 +1,22 @@
 // export const host="https://real-time-chat-app-cvb7.onrender.com";
 //https://updated-kyi0.onrender.com
-export const host ="http://localhost:5000";
+// export const host ="http://localhost:5000";
 
-// export const host="https://updated-kyi0.onrender.com";
+// export const host="https://fullstack-88ek.onrender.com";
 
-export const registerRoute = `${host}/api/auth/register`
+export const host=process.env.REACT_APP_BASE_URL;
 
-export const loginRoute = `${host}/api/auth/login`
+export const registerRoute = `${host}/auth/register`
 
-export const setAvatarRoute = `${host}/api/auth/avatr`
+export const loginRoute = `${host}/auth/login`
 
-export const updateAvatar = `${host}/api/auth/updateProfile`
+export const setAvatarRoute = `${host}/auth/avatr`
 
-export const allUserRoute = `${host}/api/auth/allusers`
+export const updateAvatar = `${host}/auth/updateProfile`
 
-export const sendMessaegRoute= `${host}/api/messages/addmsg`;
+export const allUserRoute = `${host}/auth/allusers`
 
-export const getAllMessagesRoute= `${host}/api/messages/getmsg`;
+export const sendMessaegRoute= `${host}/messages/addmsg`;
+
+export const getAllMessagesRoute= `${host}/messages/getmsg`;
 
