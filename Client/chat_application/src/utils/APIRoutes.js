@@ -2,21 +2,21 @@
 //https://updated-kyi0.onrender.com
 // export const host ="http://localhost:5000";
 
-// export const host="https://fullstack-88ek.onrender.com";
+export const host="https://fullstack-88ek.onrender.com";
 
-export const host=process.env.REACT_APP_BASE_URL;
+// export const host=process.env.REACT_APP_BASE_URL;
 
-export const registerRoute = `${host}/auth/register`
+export const registerRoute = `${host}/api/auth/register`
 
-export const loginRoute = `${host}/auth/login`
+export const loginRoute = `${host}/api/auth/login`
 
-export const setAvatarRoute = `${host}/auth/avatr`
+export const setAvatarRoute = `${host}/api/auth/avatr`
 
-export const updateAvatar = `${host}/auth/updateProfile`
+export const updateAvatar = `${host}/api/auth/updateProfile`
 
-export const allUserRoute = `${host}/auth/allusers`
+export const allUserRoute = `${host}/api/auth/allusers`
 
-export const sendMessaegRoute= `${host}/messages/addmsg`;
+export const sendMessaegRoute= `${host}/api/messages/addmsg`;
 
-export const getAllMessagesRoute= `${host}/messages/getmsg`;
+export const getAllMessagesRoute= `${host}/api/messages/getmsg`;
 

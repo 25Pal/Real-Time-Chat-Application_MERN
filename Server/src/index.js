@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 require("dotenv").config();
 const userModel = require("./model/userModel")
-const path = require("path");
+// const path = require("path");
 
 const PORT = process.env.PORT || 5000;
 const userRoutes = require("./routes/userRoutes");
@@ -15,7 +15,6 @@ const socket = require("socket.io");
 app.use(cors());
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../build")));
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", userRoutes);
 
@@ -31,10 +30,6 @@ const server = app.listen(PORT, () => {
     console.log(`Server Running on ${PORT}`)
 })
 
-app.get("*", (req, res) => {
-    const file = path.join(__dirname, "../build/index.html");
-    res.sendFile(file);
-  });
 
 /////////////////////// Socket Operation \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -56,9 +51,7 @@ io.on("connection", (socket) => {
 
     global.chatSocket = socket;
     //-->For online status
-    const iD = socket.handshake.auth.token;
-
-
+    // const iD = socket.handshake.auth.token;
     // socket.on("onlinestatus", async (userId) => {
     //     console.log("user connected");
     //      // saving userId to object with socket ID
@@ -76,6 +69,7 @@ io.on("connection", (socket) => {
 
     //-->Catching custom event "send-msg"
     socket.on("send-msg", (data) => {
+        console.log("user connected");
         const sendUserSocket = onlineUsers.get(data.to);
         if (sendUserSocket) {
             socket.to(sendUserSocket).emit("msg-recieve", data.message);
