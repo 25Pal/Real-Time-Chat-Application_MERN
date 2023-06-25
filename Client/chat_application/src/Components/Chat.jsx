@@ -47,7 +47,7 @@ function Chat() {
       });
       socket.current.emit("add-user", currentUser._id); //++++++ Created custom event ++++++\\
     }
-  }, [currentUser]);
+  }, [currentUser]); 
 
   //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Getting list of users from backend  ^^^^^^^^^^^^^^^^^^^^^^\\
 

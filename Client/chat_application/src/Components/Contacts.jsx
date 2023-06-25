@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
-// import { v4 as uuidv4 } from "uuid";
 import { io } from "socket.io-client";
 import { host } from "../utils/APIRoutes";
 
@@ -15,7 +14,7 @@ function Contacts({ contacts, currentUser, changeChat }) {
     const [currentUserName, setCurrentUserName] = useState(undefined);
     const [currentUserImage, setCurrentUserImage] = useState(undefined);
     const [currentSelected, setCurrentSelected] = useState(undefined);
-    const [status , setStatus]= useState("false");
+    // const [status , setStatus]= useState("false");
 
     const socket = useRef();
 //^^^^^^^^^^^^^^^^^^^^^^^^ Setting data after all operation done(At the end) ^^^^^^^^^^^^^^^^^^^^\\
@@ -46,15 +45,15 @@ useEffect(() => {
     };
 
 //^^^^^^^^^^^^^^^^^^^^^^^ Show Onine user ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
-useEffect( ()=>{
-    const show = async ()=>{
-       socket.on("getOnlineUser",(data)=>{
-        setStatus("true");
+// useEffect( ()=>{
+//     const show = async ()=>{
+//        socket.on("getOnlineUser",(data)=>{
+//         setStatus("true");
             
-       })
-    }
-    show();
-},[status])
+//        })
+//     }
+//     show();
+// },[status])
 //^^^^^^^^^^^^^^^^^^^^^^^^ Update Profile ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\
 const toastOptions = {
     position: "bottom-right",

@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
 
     global.chatSocket = socket;
     //-->For online status
-    // const iD = socket.handshake.auth.token;
+    const iD = socket.handshake.auth.token;
     // socket.on("onlinestatus", async (userId) => {
     //     console.log("user connected");
     //      // saving userId to object with socket ID

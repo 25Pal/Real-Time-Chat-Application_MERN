@@ -1,8 +1,7 @@
-// export const host="https://real-time-chat-app-cvb7.onrender.com";
-//https://updated-kyi0.onrender.com
-// export const host ="http://localhost:5000";
 
-export const host="https://fullstack-88ek.onrender.com";
+export const host ="http://localhost:5000";
+
+// export const host="https://quickapp-7cw2.onrender.com";
 
 // export const host=process.env.REACT_APP_BASE_URL;
 
