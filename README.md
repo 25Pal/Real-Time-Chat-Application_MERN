@@ -8,6 +8,7 @@ Through this application users can able to talk with each other at the same time
 
 
 ## Deployment
+![App Screenshot](https://inspiring-marigold-366938.netlify.app/)
 
 #### To start backend server
 - Go inside src folder .
